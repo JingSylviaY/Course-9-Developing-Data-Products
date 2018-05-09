@@ -1,0 +1,32 @@
+---
+title: 'Developing Data Products Project 2: Plotly'
+author: "Sylvia Yin"
+date: "May 8, 2018"
+output:
+  ioslides_presentation: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+##Introduction 
+
+Create a web page presentation using R Markdown that features a plot created with Plotly. 
+
+
+## Basic Scartterplot with mpg dataset
+
+```{r, warning=FALSE, message=FALSE}
+library(plotly)
+data("mpg")
+plot_ly(mpg, x=~displ,y=~hwy,  type="scatter", color = ~drv)
+```
+
+## Slide with Boxplot
+
+```{r}
+
+plot_ly(mpg, x=~drv,y=~hwy,  type="box", color=~factor(cyl))
+
+```
